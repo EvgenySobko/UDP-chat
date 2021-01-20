@@ -1,4 +1,3 @@
-import os
 import socket
 import threading
 import random
@@ -36,7 +35,6 @@ def run_client(ip):
         s.sendto(data.encode('utf-8'), server)
     s.sendto(data.encode('utf-8'), server)
     s.close()
-    os._exit(1)
 
 
 if __name__ == '__main__':
