@@ -23,7 +23,7 @@ def run_server():
     threading.Thread(target=recv_data, args=(s, recvPackets)).start()
 
     while True:
-        while not recvPackets.empty():
+        if recvPackets.not_empty:
             data, addr = recvPackets.get()
             if addr not in clients:
                 clients.add(addr)
